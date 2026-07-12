@@ -79,6 +79,8 @@ apis:
       - type: Documentation
         url: https://nordicapis.com/a-software-architects-guide-to-api-first-strategy/
 common:
+  - type: DomainSecurity
+    url: security/api-first-domain-security.yml
   - type: Website
     url: https://swagger.io/resources/articles/adopting-an-api-first-approach/
   - type: Documentation
