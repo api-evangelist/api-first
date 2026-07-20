@@ -1,5 +1,6 @@
 aid: api-first
 name: API-First
+kind: topic
 description: >-
   API-First is a software development methodology where APIs are treated as
   first-class citizens and designed before implementation begins. In an
