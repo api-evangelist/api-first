@@ -1,107 +1,32 @@
-specification: API Commons Rate Limits
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: API-First
-providerId: api-first
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
-tags:
-  - API Design
-  - Development Methodology
-  - Software Architecture
-  - API Governance
-  - Microservices
-  - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the API-First API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - SwaggerHub - API-First Platform
-      - Stoplight - API Design Platform
-      - Postman - API Platform
-      - Nordic APIs
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - SwaggerHub - API-First Platform
-      - Stoplight - API Design Platform
-      - Postman - API Platform
-      - Nordic APIs
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - SwaggerHub - API-First Platform
-      - Stoplight - API Design Platform
-      - Postman - API Platform
-      - Nordic APIs
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - SwaggerHub - API-First Platform
-      - Stoplight - API Design Platform
-      - Postman - API Platform
-      - Nordic APIs
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - SwaggerHub - API-First Platform
-      - Stoplight - API Design Platform
-      - Postman - API Platform
-      - Nordic APIs
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+generated: '2026-09-02'
+method: none
+source: null
+sources:
+  - apis.yml (kind: topic)
+limit_count: 0
+limits: []
+headers: {}
+response_codes: {}
+note: >-
+  HONEST ZERO — there is no API to throttle. API-First is a software development methodology and
+  this repository is a topic index (apis.yml `kind: topic`, `type: Index`), not a company. No
+  entry in apis.yml carries a baseURL, no OpenAPI or other machine-readable contract exists for
+  this subject, and contract discovery on 2026-09-02 across every host named in apis.yml
+  (swagger.io, stoplight.io, www.postman.com, nordicapis.com) found no contract attributable to
+  API-First. With no callable surface there is no rate limit, no rate-limit header family and no
+  429 behaviour to record. Any real limits belong to the third-party platforms this topic
+  references and are recorded in their own profiles.
+  This file previously carried five fabricated limits (10/100/1000 requests per minute across
+  invented Free / Professional / Enterprise tiers, plus X-RateLimit-* headers nobody serves)
+  written by the 2026-05-04 bulk scaffold sweep, whose own description called them "scaffold
+  values to be replaced with published provider limits". They were counted as published limits;
+  they have been removed and replaced with this measured zero.
+replaces:
+  method: generated
+  generated: '2026-05-04'
+  reason: >-
+    Self-confessed scaffold. Five invented limits and a header contract for an entity with no
+    API host. A recorded zero is stronger than a fabricated five.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,4 +1,4 @@
-generated: '2026-07-11'
+generated: '2026-09-02'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
@@ -10,12 +10,12 @@ hosts:
 - host: stoplight.io
   https: true
   tls_version: TLSv1.3
-  cert_expires: Oct  6 22:17:08 2026 GMT
+  cert_expires: Nov 28 04:59:02 2026 GMT
   hsts: false
 - host: www.postman.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Aug 16 09:00:12 2026 GMT
+  cert_expires: Oct 14 09:01:44 2026 GMT
   hsts: true
   hsts_max_age: 31536000
 domains:
@@ -28,12 +28,12 @@ domains:
 - domain: stoplight.io
   dnssec: false
   caa:
-  - 0 issuewild "ssl.com"
-  - 0 iodef "mailto:devops@stoplight.io"
-  - 0 issue "cloudflare.com"
-  - 0 issue "comodoca.com"
-  - 0 issue "digicert.com; cansignhttpexchanges=yes"
   - 0 issue "letsencrypt.org"
+  - 0 issue "pki.goog; cansignhttpexchanges=yes"
+  - 0 issue "ssl.com"
+  - 0 issuewild "comodoca.com"
+  - 0 issuewild "digicert.com; cansignhttpexchanges=yes"
+  - 0 issuewild "letsencrypt.org"
   spf: true
   dmarc: true
   dmarc_policy: reject

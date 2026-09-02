@@ -23,16 +23,20 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: freemium
-  onboarding: unknown
+  pricing: none
+  onboarding: none
   trial: false
   try_now: false
   public: false
-  label: Freemium
-  confidence: medium
+  label: No access model — API-First is a methodology topic, not a purchasable product
+  confidence: high
+  note: >-
+    Was "freemium / medium confidence", derived on 2026-07-22 from plans/api-first-plans-pricing.yml.
+    That file was a 2026-05-04 bulk scaffold carrying three invented tiers; it has been replaced with
+    a measured plan_count of 0, so the freemium reading no longer has a source and has been retracted.
   source:
   - plans
-  generated: '2026-07-22'
+  generated: '2026-09-02'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/api-first.png
 tags:
@@ -44,7 +48,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/api-first/refs/heads/main/apis.yml
 created: '2025-01-01'
-modified: '2026-04-19'
+modified: '2026-09-02'
 specificationVersion: '0.23'
 apis:
   - aid: api-first:swagger-io
@@ -53,14 +57,14 @@ apis:
       SmartBear's SwaggerHub provides an API-first collaborative design
       platform with OpenAPI support, auto-generated documentation, mock
       servers, SDKs, and governance tooling for enterprise teams.
-    humanURL: https://swagger.io/resources/articles/adopting-an-api-first-approach/
+    humanURL: https://swagger.io/blog/understanding-the-api-first-approach-to-building-products/
     tags:
       - API Design
       - OpenAPI
       - API-First
     properties:
       - type: Documentation
-        url: https://swagger.io/resources/articles/adopting-an-api-first-approach/
+        url: https://swagger.io/blog/understanding-the-api-first-approach-to-building-products/
   - aid: api-first:stoplight
     name: Stoplight - API Design Platform
     description: >-
@@ -74,7 +78,7 @@ apis:
       - OpenAPI
     properties:
       - type: Documentation
-        url: https://stoplight.io/api-design-guide/basics
+        url: https://stoplight.io/api-design-guide
   - aid: api-first:postman
     name: Postman - API Platform
     description: >-
@@ -105,8 +109,11 @@ apis:
 common:
   - type: DomainSecurity
     url: security/api-first-domain-security.yml
-  - type: Website
-    url: https://swagger.io/resources/articles/adopting-an-api-first-approach/
+  - type: LLMsTxt
+    url: llms/api-first-llms.txt
+  # No Website on purpose. API-First is a METHODOLOGY, not a vendor. The registered URL
+  # was a swagger.io blog POST about the concept — claiming another company's page as
+  # this entry's own site (same class as roadmap#56 venue listings).
   - type: Documentation
     url: https://nordicapis.com/a-software-architects-guide-to-api-first-strategy/
   - type: Features
@@ -179,3 +186,28 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    API-First is a software development methodology, not a vendor — this profile is a topic index
+    (kind: topic, type: Index) whose four entries are other companies' platforms, so there is no
+    API-First host, no baseURL and no contract to find; api-first.com merely redirects to a
+    personal blog at evantahler.com and apifirst.org serves placeholder filler text.
+  evidence:
+    - url: https://api-first.com
+      status: 200
+    - url: https://apifirst.org
+      status: 200
+    - url: https://stoplight.io/openapi.json
+      status: 200
+    - url: https://swagger.io/openapi.json
+      status: 404
+    - url: https://nordicapis.com/openapi.json
+      status: 404
+  checked: '2026-09-02'

@@ -1,0 +1,206 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTPS probes of every host named in apis.yml, 2026-09-02
+note: >-
+  API-First is a topic index (kind: topic), not a company. It owns no domain and serves no
+  /.well-known/ surface of its own. The hosts probed below belong to the third-party platforms
+  this topic references — SmartBear (swagger.io), Stoplight (stoplight.io), Postman
+  (www.postman.com) and Nordic APIs (nordicapis.com) — each of which is profiled separately in
+  its own API Evangelist repository. Two real documents were found (Postman's RFC 9116
+  security.txt, and llms.txt on Postman and Nordic APIs) but they are those companies' documents,
+  not API-First's, so nothing was saved into this repository and NO WellKnown or SecurityTxt
+  pointer was wired into apis.yml. Recording them here as a probe result is the honest record;
+  claiming them for this profile would credit a methodology with a surface it does not serve.
+attributable_hit_count: 0
+hit_count: 0
+path_echo_control: passed
+soft_404_control: >-
+  Every host answers a randomised, impossible /.well-known/ path with 404, so none of them is a
+  path-echoing or catch-all 200 host. swagger.io, www.postman.com and nordicapis.com return large
+  HTML 404 bodies (11-32KB); stoplight.io returns a 93-byte "Invalid .well-known request" page.
+hosts:
+  - host: https://swagger.io
+    owner: SmartBear Software (profiled at all/smartbear, all/swagger)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 301
+        file: null
+        note: 301 with a zero-byte body; the redirect target is the HTML 404 page.
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+        note: 301 to /.well-known/api-catalog/ which returns the HTML 404 shell.
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/api-first-negative-control-7f3ab91c.json
+        status: 404
+        file: null
+        note: negative control — 404 as required, host is not path-echoing.
+  - host: https://stoplight.io
+    owner: Stoplight (SmartBear) — profiled at all/stoplight
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/api-first-negative-control-7f3ab91c.json
+        status: 404
+        file: null
+        note: negative control — 404 as required, host is not path-echoing.
+  - host: https://www.postman.com
+    owner: Postman, Inc. — profiled at all/postman
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        note: >-
+          A real RFC 9116 document (309 bytes, text/plain) naming
+          https://hackerone.com/postman and security@postman.com. It is POSTMAN'S document,
+          not API-First's — deliberately not saved here and deliberately not wired to a
+          SecurityTxt pointer. Belongs in all/postman.
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/api-first-negative-control-7f3ab91c.json
+        status: 404
+        file: null
+        note: negative control — 404 as required, host is not path-echoing.
+  - host: https://nordicapis.com
+    owner: Nordic APIs AB — not currently profiled in all/
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        note: >-
+          FALSE POSITIVE, recorded so it is not mistaken for a hit later. The path 301s to
+          https://nordicapis.com/wp-content/uploads/API-Catalog.jpg and returns image/jpeg —
+          a WordPress media permalink collision, not an RFC 9727 API catalog.
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/api-first-negative-control-7f3ab91c.json
+        status: 404
+        file: null
+        note: negative control — 404 as required, host is not path-echoing.
+other_probes:
+  - url: https://swagger.io/llms.txt
+    status: 404
+  - url: https://stoplight.io/llms.txt
+    status: 404
+  - url: https://www.postman.com/llms.txt
+    status: 200
+    note: Postman's own llms.txt (3,417 bytes). Belongs in all/postman, not here.
+  - url: https://nordicapis.com/llms.txt
+    status: 200
+    note: Nordic APIs' own llms.txt (26,073 bytes). Nordic APIs is not yet profiled in all/.
+  - url: https://stoplight.io/openapi.json
+    status: 200
+    note: >-
+      FALSE POSITIVE. Returns HTTP 200 application/json, 714KB decompressed, but the body is a
+      Webflow CMS page payload for Stoplight's "OpenAPI Specification" marketing article —
+      top-level keys are page/site/pageMap/hrefMap, with no openapi, no info and no paths. Not
+      an OpenAPI document. Recorded so a future round does not re-discover it as a spec.
+  - url: https://swagger.io/openapi.json
+    status: 404
+  - url: https://www.postman.com/openapi.json
+    status: 200
+    note: HTML shell (text/html despite the .json path) — the Postman SPA catch-all, not a spec.
+  - url: https://nordicapis.com/openapi.json
+    status: 404
+  - url: https://api-first.com
+    status: 200
+    note: >-
+      Redirects to https://www.evantahler.com/ — a personal engineering blog. There is no
+      company or organisation at the api-first.com domain.
+  - url: https://apifirst.org
+    status: 200
+    note: >-
+      Live but holds only placeholder Russian filler text ("Произвольный текст"). Not an
+      organisation, not a developer surface.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
