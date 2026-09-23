@@ -6,12 +6,18 @@ artifacts:
   finops/api-first-finops.yml:
     method: generated
     evidence: declared in the artifact
+  llms/api-first-llms.txt:
+    method: searched
+    evidence: 'derive-llms-provenance.py: harvested'
   plans/api-first-plans-pricing.yml:
-    method: generated
-    evidence: declared in the artifact
+    method: unknown
+    evidence: no authorship recorded
   rate-limits/api-first-rate-limits.yml:
-    method: generated
-    evidence: declared in the artifact
+    method: unknown
+    evidence: no authorship recorded
   security/api-first-domain-security.yml:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/api-first-well-known.yml:
     method: unknown
     evidence: no authorship recorded
