@@ -107,6 +107,12 @@ apis:
       - type: Documentation
         url: https://nordicapis.com/a-software-architects-guide-to-api-first-strategy/
 common:
+  - type: Plans
+    url: plans/api-first-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/api-first-rate-limits.yml
+  - type: FinOps
+    url: finops/api-first-finops.yml
   - type: DomainSecurity
     url: security/api-first-domain-security.yml
   - type: LLMsTxt
